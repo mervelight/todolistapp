@@ -28,11 +28,11 @@ public class ToDoList {
     @Column(name = "endtime")
     private Date endtime;
 
-    @Column(name = "isdone")
-    private String isdone;
+    @Column(name = "endof")
+    private String endof;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", referencedColumnName = "category", nullable = false)
+    @JoinColumn(name = "idcategory", referencedColumnName = "idcategory")
     private Category category;
 
 }

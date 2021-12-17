@@ -1,6 +1,5 @@
 package com.todolist.todolist.model;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,17 +11,16 @@ import java.util.List;
 @Table(name = "category")
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int category_id;
+    private int idcategory;
 
-    @Column(name = "categoryname")
-    private String categoryname;
+    @Column(name = "name")
+    private String name;
 
     @OneToMany(mappedBy = "category")
     private List<ToDoList> toDoList;

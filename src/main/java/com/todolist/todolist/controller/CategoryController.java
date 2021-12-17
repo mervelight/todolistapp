@@ -10,8 +10,7 @@ import java.util.List;
 @RequestMapping("/category")
 public class CategoryController {
 
-
-    private final CategoryService categoryService;
+    private CategoryService categoryService;
 
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
@@ -19,16 +18,17 @@ public class CategoryController {
 
     @GetMapping("/list")
     public List<Category> get() {
-        return this.categoryService.getAll();
+        return categoryService.getAll();
     }
 
     @DeleteMapping("/delete")
     public void delete(@RequestBody Category user) {
-        this.categoryService.delete(user);
+        categoryService.delete(user);
     }
 
     @PostMapping("/add")
     public void add(@RequestBody Category category) {
-        this.categoryService.add(category);
+        categoryService.add(category);
     }
+
 }

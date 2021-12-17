@@ -3,15 +3,16 @@ package com.todolist.todolist.service.impl;
 import com.todolist.todolist.model.ToDoList;
 import com.todolist.todolist.repository.ToDoListRepository;
 import com.todolist.todolist.service.ToDoListService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
+@Service
 public class ToDoListServiceİmpl implements ToDoListService {
+
     private ToDoListRepository toDoListRepository;
 
-    @Autowired
     public ToDoListServiceİmpl(ToDoListRepository toDoListRepository) {
         this.toDoListRepository = toDoListRepository;
     }

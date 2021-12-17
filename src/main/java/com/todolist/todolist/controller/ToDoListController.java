@@ -1,8 +1,7 @@
 package com.todolist.todolist.controller;
 
 import com.todolist.todolist.model.ToDoList;
-import com.todolist.todolist.service.ToDoListService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.todolist.todolist.service.impl.ToDoListServiceİmpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,12 +9,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/odev")
 public class ToDoListController {
-    private final ToDoListService toDoListService;
 
-    @Autowired
-    public ToDoListController(ToDoListService toDoListService) {
-        this.toDoListService = toDoListService;
-    }
+    ToDoListServiceİmpl toDoListService;
 
     @GetMapping("/list")
     public List<ToDoList> get() {

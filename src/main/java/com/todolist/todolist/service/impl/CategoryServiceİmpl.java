@@ -3,15 +3,17 @@ package com.todolist.todolist.service.impl;
 import com.todolist.todolist.model.Category;
 import com.todolist.todolist.repository.CategoryRepository;
 import com.todolist.todolist.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
+@Service
 public class CategoryServiceİmpl implements CategoryService {
+
+
     private CategoryRepository categoryRepository;
 
-    @Autowired
     public CategoryServiceİmpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
